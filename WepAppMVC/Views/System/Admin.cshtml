@@ -1,0 +1,120 @@
+﻿@model  WepAppMVC.ViewModels.AccountUserVM
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Create</h2>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#accountModal">
+    Launch demo modal
+</button>
+
+<div class="row">
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Column 1</th>
+                <th>Column 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a>Edit</a>|<a>Delete</a></td>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td><a>Edit</a>|<a>Delete</a></td>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="AccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="AccountModalLabel">帳號維護</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form>
+                    <div class="form-group row">
+                        <label for="account" class="col-sm-3 col-form-label">Account</label>
+                        <div class="col-sm-9">
+                            <input id="account" type="text" class="form-control" placeholder="User Account" value="@Model.Account" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="userName" class="col-sm-3 col-form-label">User Full Name</label>
+                        <div class="col-sm-9">
+                            <input id="userName" type="text" class="form-control" value="@Model.FullName" placeholder="User Full Name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="accountStatus" class="col-sm-3 col-form-label">Account Status</label>
+                        <div class="col-sm-9">
+                            @Html.DropDownList("accountStatus", (List<SelectListItem>)ViewBag.Status, "-- Select --", new { @class= "form-control"})
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <label for="validStartDate">Valid Start Date</label>
+                        <input type="date" class="form-control mb-2 mr-sm-2" id="validStartDate" value="@Model.ValidStartDate" placeholder="Valid Start Date" />
+                        <label for="validStartTime">Valid Start Time</label>
+                        <input type="time" class="form-control mb-2 mr-sm-2" id="validStartTime" value="@Model.ValidStartTime" placeholder="Valid Start Time" />
+                    </div>
+                    <div class="form-inline">
+                        <label for="validEndDate">Valid End Date</label>
+                        <input type="date" class="form-control mb-2 mr-sm-2" id="validEndDate" value="@Model.ValidEndDate" placeholder="Valid End Date" />
+                        <label for="validEndTime">Valid Start Time</label>
+                        <input type="time" class="form-control mb-2 mr-sm-2" id="validEndTime" value="@Model.ValidEndTime" placeholder="Valid End Time" />
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastLoginIP" class="col-sm-3 col-form-label">Last Login IP</label>
+                        <div class="col-sm-9">
+                            <input id="lastLoginIP" type="text" class="form-control"
+                                   value="@string.IsNullOrEmpty(Model.LastLoginIP) ? "" : Model.LastLoginIP" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastLoginTime" class="col-sm-3 col-form-label">Last Login Time</label>
+                        <div class="col-sm-9">
+                            <input id="lastLoginIP" type="text" class="form-control"
+                                   value="@string.IsNullOrEmpty(Model.LastLoginTime) ? "" : Model.LastLoginTime" readonly />
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section content {
+
+    @Styles.Render("~/Content/datatable")
+}
+
+@section scripts {
+
+    @Scripts.Render("~/bundles/datatable")
+
+    <script>
+        (function IIEF() {
+            $(document).ready(function () {
+                $('#table_id').DataTable();
+            });
+        })();
+    </script>
+}
