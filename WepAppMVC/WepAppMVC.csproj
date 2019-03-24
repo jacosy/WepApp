@@ -227,11 +227,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\DataTable\Buttons\js\buttons.bootstrap.js" />
     <Content Include="Scripts\DataTable\Buttons\js\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTable\Buttons\js\buttons.flash.js" />
+    <Content Include="Scripts\DataTable\Buttons\js\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTable\Buttons\js\buttons.html5.js" />
+    <Content Include="Scripts\DataTable\Buttons\js\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTable\Buttons\js\buttons.print.js" />
+    <Content Include="Scripts\DataTable\Buttons\js\buttons.print.min.js" />
     <Content Include="Scripts\DataTable\Buttons\js\dataTables.buttons.js" />
     <Content Include="Scripts\DataTable\Buttons\js\dataTables.buttons.min.js" />
     <Content Include="Scripts\DataTable\DataTable\dataTables.bootstrap.js" />
@@ -242,6 +249,9 @@
     <Content Include="Scripts\DataTable\Editor\dataTables.editor.min.js" />
     <Content Include="Scripts\DataTable\Editor\editor.bootstrap.js" />
     <Content Include="Scripts\DataTable\Editor\editor.bootstrap.min.js" />
+    <Content Include="Scripts\DataTable\pdfmake\pdfmake.js" />
+    <Content Include="Scripts\DataTable\pdfmake\pdfmake.min.js" />
+    <Content Include="Scripts\DataTable\pdfmake\vfs_fonts.js" />
     <Content Include="Scripts\DataTable\Responsive\dataTables.responsive.js" />
     <Content Include="Scripts\DataTable\Responsive\dataTables.responsive.min.js" />
     <Content Include="Scripts\DataTable\Responsive\responsive.bootstrap.js" />
@@ -318,6 +328,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebApp.Common.Models\WebApp.Common.Models.csproj">
+      <Project>{f9d9b57a-c872-41c9-ab2d-1d3d180f0680}</Project>
+      <Name>WebApp.Common.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WepAppMVC.Models\WepAppMVC.Models.csproj">
       <Project>{4d5e07a9-0716-4d84-84a8-57643d3cef60}</Project>
       <Name>WepAppMVC.Models</Name>

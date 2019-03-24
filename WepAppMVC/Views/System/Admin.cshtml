@@ -11,26 +11,25 @@
 </button>
 
 <div class="row">
-    <table id="table_id" class="display">
+    <header>
+        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+        <h2> 人員權限管理 </h2>
+    </header>
+    <table id="accountTable" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-                <th>Action</th>
-                <th>Column 1</th>
-                <th>Column 2</th>
+                <th></th>
+                <th data-class="expand">Account</th>
+                <th>UserName</th>
+                <th data-hide="phone">Email</th>
+                <th data-hide="phone">Role</th>
+                <th data-hide="phone,tablet">AccountStatus</th>
+                <th data-hide="phone,tablet">Valid Start Time</th>
+                <th data-hide="phone,tablet">Valid End Time</th>
+                <th data-hide="phone,tablet">Last Login IP</th>
+                <th data-hide="phone,tablet">Last Login Time</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td><a>Edit</a>|<a>Delete</a></td>
-                <td>Row 1 Data 1</td>
-                <td>Row 1 Data 2</td>
-            </tr>
-            <tr>
-                <td><a>Edit</a>|<a>Delete</a></td>
-                <td>Row 2 Data 1</td>
-                <td>Row 2 Data 2</td>
-            </tr>
-        </tbody>
     </table>
 </div>
 
@@ -49,45 +48,50 @@
                     <div class="form-group row">
                         <label for="account" class="col-sm-3 col-form-label">Account</label>
                         <div class="col-sm-9">
-                            <input id="account" type="text" class="form-control" placeholder="User Account" value="@Model.Account" readonly />
+                            <input id="account" type="text" class="form-control" placeholder="User Account" value="@Model.Account"
+                                   data_editor_template="@nameof(Model.Account)" readonly />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="userName" class="col-sm-3 col-form-label">User Full Name</label>
                         <div class="col-sm-9">
-                            <input id="userName" type="text" class="form-control" value="@Model.FullName" placeholder="User Full Name" />
+                            <input id="userName" type="text" class="form-control" value="@Model.UserName"
+                                   data_editor_template="@nameof(Model.UserName)" placeholder="User Full Name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-3 col-form-label">User Full Name</label>
+                        <div class="col-sm-9">
+                            <input id="email" type="text" class="form-control" value="@Model.Email"
+                                   data_editor_template="@nameof(Model.Email)" placeholder="User Email" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="accountRole" class="col-sm-3 col-form-label">Account Role</label>
+                        <div class="col-sm-9">
+                            @Html.DropDownList("accountRole", (List<SelectListItem>)ViewBag.Roles,
+                                "-- Select --", new { @class = "form-control", data_editor_template = nameof(Model.Role) })
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="accountStatus" class="col-sm-3 col-form-label">Account Status</label>
                         <div class="col-sm-9">
-                            @Html.DropDownList("accountStatus", (List<SelectListItem>)ViewBag.Status, "-- Select --", new { @class= "form-control"})
-                        </div>
-                    </div>
-                    <div class="form-inline">
-                        <label for="validStartDate">Valid Start Date</label>
-                        <input type="date" class="form-control mb-2 mr-sm-2" id="validStartDate" value="@Model.ValidStartDate" placeholder="Valid Start Date" />
-                        <label for="validStartTime">Valid Start Time</label>
-                        <input type="time" class="form-control mb-2 mr-sm-2" id="validStartTime" value="@Model.ValidStartTime" placeholder="Valid Start Time" />
-                    </div>
-                    <div class="form-inline">
-                        <label for="validEndDate">Valid End Date</label>
-                        <input type="date" class="form-control mb-2 mr-sm-2" id="validEndDate" value="@Model.ValidEndDate" placeholder="Valid End Date" />
-                        <label for="validEndTime">Valid Start Time</label>
-                        <input type="time" class="form-control mb-2 mr-sm-2" id="validEndTime" value="@Model.ValidEndTime" placeholder="Valid End Time" />
-                    </div>
-                    <div class="form-group row">
-                        <label for="lastLoginIP" class="col-sm-3 col-form-label">Last Login IP</label>
-                        <div class="col-sm-9">
-                            <input id="lastLoginIP" type="text" class="form-control"
-                                   value="@string.IsNullOrEmpty(Model.LastLoginIP) ? "" : Model.LastLoginIP" readonly />
+                            @Html.DropDownList("accountStatus", (List<SelectListItem>)ViewBag.Status,
+                                "-- Select --", new { @class = "form-control", data_editor_template = nameof(Model.AccountStatus) })
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="lastLoginTime" class="col-sm-3 col-form-label">Last Login Time</label>
+                        <label for="validStartTime" class="col-sm-3 col-form-label">Valid Start Time</label>
                         <div class="col-sm-9">
-                            <input id="lastLoginIP" type="text" class="form-control"
-                                   value="@string.IsNullOrEmpty(Model.LastLoginTime) ? "" : Model.LastLoginTime" readonly />
+                            <input type="date" class="form-control" id="validStartTime"
+                                   data-editor-template="@nameof(Model.ValidStartTime)" value="@Model.ValidStartTime" placeholder="Valid Start Time" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="validEndTime" class="col-sm-3 col-form-label">Valid Start Time</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="validEndTime"
+                                   data-editor-template="@nameof(Model.ValidEndTime)" value="@Model.ValidEndTime" placeholder="Valid End Time" />
                         </div>
                     </div>
                 </form>
@@ -102,19 +106,10 @@
 </div>
 
 @section content {
-
     @Styles.Render("~/Content/datatable")
 }
 
 @section scripts {
-
     @Scripts.Render("~/bundles/datatable")
-
-    <script>
-        (function IIEF() {
-            $(document).ready(function () {
-                $('#table_id').DataTable();
-            });
-        })();
-    </script>
+    <script src="~/Scripts/admin.js"></script>
 }

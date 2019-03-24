@@ -22,16 +22,19 @@ namespace WepAppMVC
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
-                   "~/Scripts/DataTable/DataTable/jquery.dataTables.min.js",
-                   "~/Scripts/DataTable/DataTables.bootstrap.min.js",
-                   "~/Scripts/DataTable/Buttons/js/dataTables.buttons.min.js",
-                   "~/Scripts/DataTable/Buttons/js/buttons.bootstrap.min.js",
-                   "~/Scripts/DataTable/Responsive/dataTables.responsive.min.js",
-                   "~/Scripts/DataTable/Responsive/responsive.bootstrap.min.js",
-                   "~/Scripts/DataTable/Select/dataTables.select.min.js",
-                   "~/Scripts/DataTable/Select/select.bootstrap.min.js",
-                   "~/Scripts/DataTable/Editor/dataTables.editor.min.js",
-                   "~/Scripts/DataTable/Eeditor/editor.bootstrap.min.js"
+                   "~/Scripts/DataTable/DataTable/jquery.dataTables.js",
+                   "~/Scripts/DataTable/DataTable/DataTables.bootstrap.js",
+                   "~/Scripts/DataTable/Buttons/js/dataTables.buttons.js",
+                   "~/Scripts/DataTable/Buttons/js/buttons.bootstrap.js",
+                   "~/Scripts/DataTable/Buttons/js/buttons.html5.js",
+                   "~/Scripts/DataTable/Buttons/js/buttons.print.js",
+                   "~/Scripts/DataTable/Buttons/js/buttons.flash.js",
+                   "~/Scripts/DataTable/Responsive/dataTables.responsive.js",
+                   "~/Scripts/DataTable/Responsive/responsive.bootstrap.js",
+                   "~/Scripts/DataTable/Select/dataTables.select.js",
+                   "~/Scripts/DataTable/Select/select.bootstrap.js",
+                   "~/Scripts/DataTable/Editor/dataTables.editor.js",
+                   "~/Scripts/DataTable/Editor/editor.bootstrap.js"
                ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -39,16 +42,11 @@ namespace WepAppMVC
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/datatable").Include(
-                   "~/Content/DataTable/DataTable/css/jquery.dataTables.min.css",
-                   "~/Content/DataTable/DataTable/css/dataTables.bootstrap.min.css",
-                   "~/Content/DataTable/Buttons/buttons.dataTables.min.css",
-                   "~/Content/DataTable/Buttons/buttons.bootstrap.min.css",
-                   "~/Content/DataTable/Responsive/responsive.dataTables.min.css",
-                   "~/Content/DataTable/Responsive/responsive.bootstrap.min.css",
-                   "~/Content/DataTable/Select/select.dataTables.min.css",
-                   "~/Content/DataTable/Select/select.bootstrap.min.css",
-                   "~/Content/DataTable/Editor/editor.dataTables.min.css",
-                   "~/Content/DataTable/Eeditor/editor.bootstrap.min.css"
+                   "~/Content/DataTable/DataTable/css/dataTables.bootstrap.css",
+                   "~/Content/DataTable/Buttons/buttons.bootstrap.css",
+                   "~/Content/DataTable/Responsive/responsive.bootstrap.css",
+                   "~/Content/DataTable/Select/select.bootstrap.css",
+                   "~/Content/DataTable/Editor/editor.bootstrap.css"
                ));
         }
     }
