@@ -185,6 +185,26 @@
     <Compile Include="Migrations\201903230607590_InitalModel.Designer.cs">
       <DependentUpon>201903230607590_InitalModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904041409395_CreateFunctionalityTable.cs" />
+    <Compile Include="Migrations\201904041409395_CreateFunctionalityTable.Designer.cs">
+      <DependentUpon>201904041409395_CreateFunctionalityTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904050942594_PopulateFunctionalities.cs" />
+    <Compile Include="Migrations\201904050942594_PopulateFunctionalities.Designer.cs">
+      <DependentUpon>201904050942594_PopulateFunctionalities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904060606498_CreateRoleFunctionMappingList.cs" />
+    <Compile Include="Migrations\201904060606498_CreateRoleFunctionMappingList.Designer.cs">
+      <DependentUpon>201904060606498_CreateRoleFunctionMappingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904061324155_InitializedData.cs" />
+    <Compile Include="Migrations\201904061324155_InitializedData.Designer.cs">
+      <DependentUpon>201904061324155_InitializedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904061529571_CreateUserInfo.cs" />
+    <Compile Include="Migrations\201904061529571_CreateUserInfo.Designer.cs">
+      <DependentUpon>201904061529571_CreateUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -270,14 +290,18 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -325,6 +349,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903230607590_InitalModel.resx">
       <DependentUpon>201903230607590_InitalModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904041409395_CreateFunctionalityTable.resx">
+      <DependentUpon>201904041409395_CreateFunctionalityTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904050942594_PopulateFunctionalities.resx">
+      <DependentUpon>201904050942594_PopulateFunctionalities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904060606498_CreateRoleFunctionMappingList.resx">
+      <DependentUpon>201904060606498_CreateRoleFunctionMappingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904061324155_InitializedData.resx">
+      <DependentUpon>201904061324155_InitializedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904061529571_CreateUserInfo.resx">
+      <DependentUpon>201904061529571_CreateUserInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
