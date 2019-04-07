@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using WepAppMVC.Models;
 
 namespace WepAppMVC.DB
@@ -9,6 +10,9 @@ namespace WepAppMVC.DB
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        private DbSet<Functionality> Functionalities { get; set; }
+        private DbSet<RoleFunctionMappings> RoleFunctionMappingList { get; set; }
 
         public static ApplicationDbContext Create()
         {
