@@ -21,8 +21,7 @@
     $(document).ready(function () {
         $('#accountTable').DataTable({
             dom: "Bfrtip",
-            processing: true,
-            //serverSide: true,
+            processing: true,            
             ajax: {
                 url: url + '/GetData',
                 type: 'GET',
